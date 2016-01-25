@@ -107,18 +107,6 @@ WHERE credits = 0;
 
 -- o)
 
-o) Which students have the highest grade average? Advice: define and use a view that
-gives the person number and grade average for each student.
-
-CREATE VIEW averagegrade as
-SELECT avg(grade), pnbr
-FROM students s
-JOIN takencourses t on (t.pnbr = s.pnbr);
-
-SELECT max(grade)
-FROM averagegrade;
-
-
 
 
 /*
