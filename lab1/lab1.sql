@@ -107,7 +107,22 @@ WHERE credits = 0;
 
 -- o)
 
+CREATE VIEW averagegrade as
+SELECT pnbr, avg(grade) 'average'
+FROM takencourses
+GROUP BY pnbr;
 
+SELECT max(grade), pnbr
+FROM averagegrade;
+
+-- p)
+
+
+
+SELECT sum(credits)
+FROM courses
+JOIN takencourses on (takencourses.coursecode = courses.coursecode)
+JOIN students on (takencourses.pnbr = students.pnbr);
 
 /*
 
