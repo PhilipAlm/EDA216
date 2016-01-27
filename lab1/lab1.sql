@@ -92,8 +92,7 @@ JOIN students s on (s.pnbr = t.pnbr)
 WHERE s.firstname = 'Eva' and s.lastname = 'Alm';
 
 SELECT avg(grade)
-FROM courses c
-JOIN takencourses t on (t.coursecode = c.coursecode)
+FROM takencourses t
 JOIN students s on (s.pnbr = t.pnbr)
 WHERE s.firstname = 'Eva' and s.lastname = 'Alm';
 
@@ -117,12 +116,6 @@ FROM averagegrade;
 
 -- p)
 
-
-
-SELECT sum(credits)
-FROM courses
-JOIN takencourses on (takencourses.coursecode = courses.coursecode)
-JOIN students on (takencourses.pnbr = students.pnbr);
 
 /*
 
