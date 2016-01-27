@@ -114,7 +114,11 @@ SELECT max(grade), pnbr
 FROM averagegrade;
 
 -- p)
-
+SELECT students.pNbr, COALESCE(sum(credits),0) 
+FROM students 
+LEFT OUTER JOIN takencourses on (students.pNbr = takencourses.pnbr) 
+LEFT OUTER JOIN courses on (courses.coursecode = takencourses.coursecode) 
+GROUP BY pnbr;
 
 /*
 
