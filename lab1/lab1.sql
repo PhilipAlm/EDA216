@@ -69,8 +69,7 @@ WHERE takencourses.pnbr = '910101-1234';
 
 SELECT avg(grade)
 FROM takencourses
-JOIN courses on (takencourses.coursecode = courses.coursecode)
-WHERE takencourses.pnbr = '910101-1234';
+WHERE pnbr = '910101-1234';
 
 -- m) 
 
