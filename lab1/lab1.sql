@@ -120,6 +120,15 @@ LEFT OUTER JOIN takencourses on (students.pNbr = takencourses.pnbr)
 LEFT OUTER JOIN courses on (courses.coursecode = takencourses.coursecode) 
 GROUP BY pnbr;
 
+-- q)
+ SELECT pNBR, CONCAT(firstname,lastname) 
+ FROM students 
+ WHERE concat(firstname,lastname) in 
+ (Select concat(firstname,lastname) 
+ from students 
+ group by concat(firstname,lastname) 
+ having count(*) > 1) 
+ ORDER BY concat(firstname,lastname);
 /*
 
 mysql> describe takencourses;
